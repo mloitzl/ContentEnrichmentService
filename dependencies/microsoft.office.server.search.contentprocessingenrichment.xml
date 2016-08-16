@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Office.Server.Search.ContentProcessingEnrichment</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Office.Server.Search.ContentProcessingEnrichment.IContentProcessingEnrichmentService">
+            <summary>
+            Defines a service that accepts requests from the content processing component.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Office.Server.Search.ContentProcessingEnrichment.IContentProcessingEnrichmentService.ProcessItem(Microsoft.Office.Server.Search.ContentProcessingEnrichment.Item)">
+            <summary>
+            Processes the received <see cref="T:Microsoft.Office.Server.Search.ContentProcessingEnrichment.Item"/> and returns the result as a <see cref="T:Microsoft.Office.Server.Search.ContentProcessingEnrichment.ProcessedItem"/>.
+            </summary>
+            <param name="item">The item coming from the content processing component.</param>
+            <returns>The response.</returns>
+        </member>
+        <member name="T:Microsoft.Office.Server.Search.ContentProcessingEnrichment.Item">
+            <summary>
+            Defines the input to <see cref="M:Microsoft.Office.Server.Search.ContentProcessingEnrichment.IContentProcessingEnrichmentService.ProcessItem(Microsoft.Office.Server.Search.ContentProcessingEnrichment.Item)"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Office.Server.Search.ContentProcessingEnrichment.Item.ItemProperties">
+            <summary>
+            Gets or sets the properties that are sent to a service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Office.Server.Search.ContentProcessingEnrichment.Item.RawData">
+            <summary>
+            Gets or sets the raw data field that may be sent to the service.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Office.Server.Search.ContentProcessingEnrichment.ProcessedItem">
+            <summary>
+            Defines the response returned by <see cref="M:Microsoft.Office.Server.Search.ContentProcessingEnrichment.IContentProcessingEnrichmentService.ProcessItem(Microsoft.Office.Server.Search.ContentProcessingEnrichment.Item)"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Office.Server.Search.ContentProcessingEnrichment.ProcessedItem.ItemProperties">
+            <summary>
+            Gets or sets the processed properties to return to the content processing component.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Office.Server.Search.ContentProcessingEnrichment.ProcessedItem.ErrorCode">
+            <summary>
+            Gets or sets an optional error id. It is up to the implementer to define errors. The default value of an
+            ErrorCode is 0, and means no error.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Office.Server.Search.ContentProcessingEnrichment.PropertyTypes.Property`1">
+            <summary>
+            A property.
+            </summary>
+            <typeparam name="T">
+            The type of the property.
+            </typeparam>
+        </member>
+        <member name="T:Microsoft.Office.Server.Search.ContentProcessingEnrichment.PropertyTypes.AbstractProperty">
+            <summary>
+            Abstract class for properties.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Office.Server.Search.ContentProcessingEnrichment.PropertyTypes.AbstractProperty.NameMemberName">
+            <summary>
+            Defines the DataMember name for the Name property
+            </summary>
+        </member>
+        <member name="F:Microsoft.Office.Server.Search.ContentProcessingEnrichment.PropertyTypes.AbstractProperty.ValueMemberName">
+            <summary>
+            Defines the DataMember name for the Value property of an implementation
+            </summary>
+        </member>
+        <member name="M:Microsoft.Office.Server.Search.ContentProcessingEnrichment.PropertyTypes.AbstractProperty.KnownTypes">
+            <summary>
+            All the known types that the datacontractserializer should support.
+            </summary>
+            <returns>The known types</returns>
+        </member>
+        <member name="P:Microsoft.Office.Server.Search.ContentProcessingEnrichment.PropertyTypes.AbstractProperty.Name">
+            <summary>
+            Gets or sets the name of the property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Office.Server.Search.ContentProcessingEnrichment.PropertyTypes.AbstractProperty.ObjectValue">
+            <summary>
+            Gets or sets the value as an object.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Office.Server.Search.ContentProcessingEnrichment.PropertyTypes.Property`1.Value">
+            <summary>
+            Gets or sets the Value of this Property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Office.Server.Search.ContentProcessingEnrichment.PropertyTypes.Property`1.ObjectValue">
+            <summary>
+            Gets or sets the value as an object. This is not a part of the data contract, and will not be
+            serialized over the wire.
+            </summary>
+        </member>
+    </members>
+</doc>
