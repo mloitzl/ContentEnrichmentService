@@ -10,11 +10,11 @@ using System.Text;
 
 namespace ContentEnrichmentService.Service
 {
-#if DEBUG
+//#if DEBUG
     // Reduces the maximum amount of parallel threads to 1, makes it a lot easier to debug
     // Exception callstacks are transmitted in DEBUG builds
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Single, IncludeExceptionDetailInFaults = true)]
-#endif
+//#endif
     public class ContentProcessor : IContentProcessingEnrichmentService
     {
 
@@ -29,6 +29,9 @@ namespace ContentEnrichmentService.Service
             var fileExtension = GetItemProperty(item, "FileExtension");
 
             var props = new List<AbstractProperty>();
+
+            if (Counter == int.MaxValue) Counter = 0;
+
             props.Add(new Property<string>
             {
                 Name = "CustomCategory",
